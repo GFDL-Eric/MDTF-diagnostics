@@ -1,0 +1,51 @@
+// the convect triggering potential
+//
+// All text to the right of an unquoted "//" is a comment and ignored, as well
+// as blank lines (JSONC quasi-standard.) JSON doesn't support line continuation
+// in strings, so you'll want to turn word wrap on in your editor.
+//
+{
+  "settings" : {
+    "driver" : "tfs_afs.py",
+    "long_name" : "Triggering feedback strength (TFS) and amplification feedback strength (AFS)",
+    "realm" : "atmos",
+    "description" : "Sensitivity of the afternoon precipitation probability and amplity to the early morning evaporative fraction",
+    "runtime_requirements": {
+      "python3": [],
+      "Rscript": ["maps", "fields", "ncdf4", "PCICt", "suncalc"]
+    }
+  },
+  "data": {
+    "frequency": "6hr"
+  },
+  "dimensions": {
+    "lat": {"standard_name": "latitude"},
+    "lon": {"standard_name": "longitude"},
+    "time": {"standard_name": "time",
+             "calendar": "noleap",
+             "need_bounds": false
+    }
+  },
+  "varlist" : {
+    "sftlf": {
+      "standard_name": "land_area_fraction",
+      "units": "%",
+      "dimensions": ["lat", "lon"]
+    },
+    "hfls": {
+      "standard_name": "surface_upward_latent_heat_flux",
+      "units": "W m-2",
+      "dimensions": ["time", "lat", "lon"]
+    },
+    "hfss": {
+      "standard_name": "surface_upward_sensible_heat_flux",
+      "units": "W m-2",
+      "dimensions": ["time", "lat", "lon"]
+    },
+    "pr": {
+      "standard_name": "precipitation_flux",
+      "units": "kg m-2 s-1",
+      "dimensions": ["time", "lat", "lon"]
+    }
+  }
+}

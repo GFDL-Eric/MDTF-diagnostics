@@ -1,0 +1,33 @@
+// the lagged auto-correltion from daily soil moisture
+//
+// All text to the right of an unquoted "//" is a comment and ignored, as well
+// as blank lines (JSONC quasi-standard.) JSON doesn't support line continuation
+// in strings, so you'll want to turn word wrap on in your editor.
+//
+{
+  "settings" : {
+    "driver" : "soil_moisture_memory.py",
+    "long_name" : "Soil Moisture Memory",
+    "realm" : "land",
+    "description" : "Lagged Auto-correltion from Daily Soil Moisture",
+    "runtime_requirements": {
+      "python3": [],
+      "Rscript": ["colorRamps", "maps", "fields", "ncdf4"]
+    }
+  },
+  "data": {
+    "frequency": "mon"
+  },
+  "dimensions": {
+    "lat": {"standard_name": "latitude"},
+    "lon": {"standard_name": "longitude"},
+    "time": {"standard_name": "time"}
+  },
+  "varlist" : {
+    "mrsos": {
+      "standard_name": "mass_content_of_water_in_soil_layer",
+      "units": "kg m-2",
+      "dimensions": ["time", "lat", "lon"]
+    }
+  }
+}

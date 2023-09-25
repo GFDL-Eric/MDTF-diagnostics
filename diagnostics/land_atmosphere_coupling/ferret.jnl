@@ -1,0 +1,8 @@
+ ! NOAA/PMEL TMAP
+ ! FERRET v7.44 (optimized)
+ ! Linux 4.12.14-150.47-default 64-bit - 04/22/20
+ !  7-Dec-22 16:37     
+
+use tt.nc
+sh d
+shade/k=1 land_leg

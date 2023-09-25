@@ -1,0 +1,68 @@
+// the lagged auto-correltion from daily soil moisture
+//
+// All text to the right of an unquoted "//" is a comment and ignored, as well
+// as blank lines (JSONC quasi-standard.) JSON doesn't support line continuation
+// in strings, so you'll want to turn word wrap on in your editor.
+//
+{
+  "settings" : {
+    "driver" : "DFF.py",
+    "long_name" : "Duan-Findell-Fueglistaler Framework",
+    "realm" : "land",
+    "description" : "Soil Moisture and Aridity Index",
+    "runtime_requirements": {
+      "python3": [],
+      "Rscript": ["colorRamps", "maps", "fields", "ncdf4"]
+    }
+  },
+  "data": {
+    "frequency": "day"
+  },
+  "dimensions": {
+    "lat": {"standard_name": "latitude"},
+    "lon": {"standard_name": "longitude"},
+    "time": {"standard_name": "time"}
+  },
+  "varlist" : {
+    "pr": {
+      "standard_name": "precipitation_flux",
+      "units": "kg m-2 s-1",
+      "dimensions": ["time", "lat", "lon"]
+    },
+    "mrsos": {
+      "standard_name": "mass_content_of_water_in_soil_layer",
+      "units": "kg m-2",
+      "dimensions": ["time", "lat", "lon"]
+    },
+    "tasmax": {
+      "standard_name": "maximum_air_temperature",
+      "units": "K",
+      "dimensions": ["time", "lat", "lon"]
+    },
+    "hfls": {
+      "standard_name": "surface_upward_latent_heat_flux",
+      "units": "W m-2",
+      "dimensions": ["time", "lat", "lon"]
+    },
+    "rlds": {
+      "standard_name": "surface_downwelling_shortwave_flux_in_air",
+      "units": "W m-2",
+      "dimensions": ["time", "lat", "lon"]
+    },
+    "rlus": {
+      "standard_name": "surface_upwelling_shortwave_flux_in_air",
+      "units": "W m-2",
+      "dimensions": ["time", "lat", "lon"]
+    },
+    "rsds": {
+      "standard_name": "surface_upwelling_longwave_flux_in_air",
+      "units": "W m-2",
+      "dimensions": ["time", "lat", "lon"]
+    },
+    "rsus": {
+      "standard_name": "surface_downwelling_longwave_flux_in_air",
+      "units": "W m-2",
+      "dimensions": ["time", "lat", "lon"]
+    }
+  }
+}

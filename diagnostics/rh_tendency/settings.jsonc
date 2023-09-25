@@ -1,0 +1,57 @@
+// the convect triggering potential
+//
+// All text to the right of an unquoted "//" is a comment and ignored, as well
+// as blank lines (JSONC quasi-standard.) JSON doesn't support line continuation
+// in strings, so you'll want to turn word wrap on in your editor.
+//
+{
+  "settings" : {
+    "driver" : "convect_trigger_pot.py",
+    "long_name" : "Convection Triggering Potential",
+    "realm" : "atmos",
+    "description" : "Convection Triggering Potential and Hi low",
+    "runtime_requirements": {
+      "python3": [],
+      "Rscript": ["maps", "fields", "ncdf4", "PCICt", "suncalc"]
+    }
+  },
+  "data": {
+    "frequency": "6hr"
+  },
+  "dimensions": {
+    "lat": {"standard_name": "latitude"},
+    "lon": {"standard_name": "longitude"},
+    "lev": {
+      "standard_name": "atmosphere_hybrid_sigma_pressure_coordinate",
+      "units": "1",
+      "positive": "down",
+      "axis": "Z"
+    },
+    "time": {"standard_name": "time",
+             "calendar": "noleap",
+             "need_bounds": false
+    }
+  },
+  "varlist" : {
+    "hus": {
+      "standard_name": "specific_humidity",
+      "units": "kg kg-1",
+      "dimensions": ["time", "lev", "lat", "lon"]
+    },
+    "ps": {
+      "standard_name": "surface_air_pressure",
+      "units": "Pa",
+      "dimensions": ["time", "lat", "lon"]
+    },
+    "sftlf": {
+      "standard_name": "land_area_fraction",
+      "units": "%",
+      "dimensions": ["lat", "lon"]
+    },
+    "ta": {
+      "standard_name": "air_temperature",
+      "units": "K",
+      "dimensions": ["time", "lev", "lat", "lon"]
+    }
+  }
+}

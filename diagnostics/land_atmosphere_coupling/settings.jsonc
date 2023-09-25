@@ -1,0 +1,53 @@
+// the convect triggering potential
+//
+// All text to the right of an unquoted "//" is a comment and ignored, as well
+// as blank lines (JSONC quasi-standard.) JSON doesn't support line continuation
+// in strings, so you'll want to turn word wrap on in your editor.
+//
+{
+  "settings" : {
+    "driver" : "land_atmosphere_coupling.py",
+    "long_name" : "Land-Atmosphere Coupling",
+    "realm" : "land",
+    "description" : "Two-legged coupling strength from the land to the atmosphere",
+    "runtime_requirements": {
+      "python3": [],
+      "Rscript": ["maps", "fields", "ncdf4", "PCICt"]
+    }
+  },
+  "data": {
+    "frequency": "mon"
+  },
+  "dimensions": {
+    "lat": {"standard_name": "latitude"},
+    "lon": {"standard_name": "longitude"},
+    "time": {"standard_name": "time"}
+  },
+  "varlist" : {
+    "huss": {
+      "standard_name": "surface_specific_humidity",
+      "units": "1",
+      "dimensions": ["time", "lat", "lon"]
+    },
+    "ps": {
+      "standard_name": "surface_air_pressure",
+      "units": "Pa",
+      "dimensions": ["time", "lat", "lon"]
+    },
+    "mrsos": {
+      "standard_name": "mass_content_of_water_in_soil_layer",
+      "units": "kg m-2",
+      "dimensions": ["time", "lat", "lon"]
+    },
+    "hfss": {
+      "standard_name": "surface_upward_sensible_heat_flux",
+      "units": "W m-2",
+      "dimensions": ["time", "lat", "lon"]
+    },
+    "tas": {
+      "standard_name": "surface_air_temperature",
+      "units": "K",
+      "dimensions": ["time", "lat", "lon"]
+    }
+  }
+}
