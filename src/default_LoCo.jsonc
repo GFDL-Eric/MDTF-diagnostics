@@ -15,14 +15,14 @@
     // models in a single invocation. Comment out or delete the first entry and
     // uncomment the second to run NOAA-GFDL-AM4 only for the MJO_prop_amp POD,
     // and likewise for the SM_ET_coupling POD.
-    //{
-    //  "CASENAME" : "GFDL.ESM4.piControl",
-    //  "model" : "CMIP",
-    //  "convention" : "CMIP",
-    //  "FIRSTYR" : 486,
-    //  "LASTYR" : 500,
-    //  "pod_list" : ["DFF"]
-    //}
+    {
+      "CASENAME" : "GFDL.ESM4.piControl",
+      "model" : "CMIP",
+      "convention" : "CMIP",
+      "FIRSTYR" : 486,
+      "LASTYR" : 500,
+      "pod_list" : ["DFF"]
+    }
     //{
     //  "CASENAME" : "GFDL.CM4.c96L32.amip",
     //  "model" : "CMIP",
@@ -39,14 +39,14 @@
     //  "LASTYR" : 2010,
     //  "pod_list" : ["tfs_afs"]
     //}
-    {
-      "CASENAME" : "GFDL.CM4.c96L32.amip",
-      "model" : "CMIP",
-      "convention" : "CMIP",
-      "FIRSTYR" : 1979,
-      "LASTYR" : 2014,
-      "pod_list" : ["land_atmosphere_coupling"]
-    }
+    //{
+    //  "CASENAME" : "GFDL.CM4.c96L32.amip",
+    //  "model" : "CMIP",
+    //  "convention" : "CMIP",
+    //  "FIRSTYR" : 1979,
+    //  "LASTYR" : 2014,
+    //  "pod_list" : ["land_atmosphere_coupling"]
+    //}
     // {
     //   "CASENAME" : "Lmon_GISS-E2-H_historical_r1i1p1",
     //   "model" : "CMIP",
@@ -93,7 +93,7 @@
   // be equal to the "--env_dir" flag passed to conda_env_setup.sh. If left
   // blank, the framework will look for its environments in the system default
   // location.
-  "conda_env_root": "/nbhome/Eric.Stofferahn/.conda/envs",
+  "conda_env_root": "/nbhome/<USER>/.conda/envs",
 
   // SETTINGS ------------------------------------------------------------------
   // Any command-line option recognized by the mdtf script (type `mdtf --help`)
